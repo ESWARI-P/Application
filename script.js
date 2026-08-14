@@ -1,9 +1,9 @@
 // Starting tasks
 let tasks = [
-  { id: 1, text: "Practice SQL joins", done: false },
-  { id: 2, text: "Revise HTML tags", done: true },
-  { id: 3, text: "Build Power BI dashboard", done: true },
-  { id: 4, text: "Push project to GitHub", done: true }
+  { id: 1, text: "Learn Html", done: false },
+  { id: 2, text: "Learn CSS Basics", done: true },
+  { id: 3, text: "Push project to GitHub", done: true },
+  { id: 4, text: "Create Application", done: true }
 ];
 
 // Get elements from the page
