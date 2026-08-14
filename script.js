@@ -1,8 +1,8 @@
 // Starting tasks
 let tasks = [
-  { id: 1, text: "Learn Html", done: false },
-  { id: 2, text: "Learn CSS Basics", done: true },
-  { id: 3, text: "Java script", done: true },
+  { id: 1, text: "Learn Html", done: true },
+  { id: 2, text: "Learn CSS Basics", done: false },
+  { id: 3, text: "Java script", done: false },
   { id: 4, text: "Push project to GitHub", done: true },
   { id: 5, text: "Create Application", done: true }
 ];
