@@ -1,0 +1,239 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-top: #2b0f2e;
+  --bg-mid: #5c1f3e;
+  --bg-bottom: #7a2f4a;
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --text-main: #f5eef1;
+  --text-muted: rgba(245, 238, 241, 0.55);
+  --pink: #ec5f8e;
+  --pink-soft: rgba(236, 95, 142, 0.35);
+  --yellow: #f0b94d;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.08), transparent 40%),
+    linear-gradient(160deg, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bottom) 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 28px 24px 24px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+}
+
+h1 {
+  text-align: center;
+  color: var(--text-main);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  letter-spacing: 0.3px;
+}
+
+.progress-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.progress-text {
+  flex: 1;
+}
+
+.progress-label {
+  display: block;
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--pink), #f78bab);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-badge {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 6px 16px var(--pink-soft);
+  text-align: center;
+  line-height: 1.1;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#taskInput {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 13px 18px;
+  color: var(--text-main);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+#taskInput::placeholder {
+  color: var(--text-muted);
+}
+
+#taskInput:focus {
+  border-color: var(--pink);
+  background: rgba(255,255,255,0.09);
+}
+
+.add-btn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: var(--text-main);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.add-btn:hover {
+  background: var(--pink);
+  transform: scale(1.05);
+}
+
+ul {
+  list-style: none;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: background 0.2s;
+}
+
+li:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.check-circle {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  color: transparent;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+li.done .check-circle {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-main);
+  word-break: break-word;
+}
+
+li.done .task-text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.icon-btn {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.edit-btn {
+  background: var(--yellow);
+  color: #3a2b06;
+}
+
+.delete-btn {
+  background: var(--pink);
+  color: #fff;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 32px 0;
+  font-size: 13px;
+  background: none !important;
+  border: none !important;
+}
